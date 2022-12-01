@@ -1,7 +1,14 @@
+
+// import { Button } from "./components/button-number/button-number";
+import Form from "./components/form/form";
+
 function App() {
+  
   return (
-    <div className="App">
-      <h1>Holaa</h1>
+    <div>
+      <Header/>
+      <Input/>
+      <Form/>
     </div>
   );
 }
