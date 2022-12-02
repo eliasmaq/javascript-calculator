@@ -13,6 +13,11 @@ export default function Form(){
       grid-template-rows: repeat(5, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 0px;
+      justify-items: center;
+      background-color: #F3F4F6;
+      border-bottom: 1px solid #666666;
+      border-left: 1px solid #666666;
+      border-right: 0.5px solid #666666;
     `}>
       <ButtonOperator css={css`grid-area: 1 / 1 / 2 / 2;`}>÷</ButtonOperator>
       <Button css={css`grid-area: 1 / 2 / 2 / 3;`}>{1}</Button>
@@ -28,12 +33,12 @@ export default function Form(){
       <Button css={css`grid-area: 3 / 2 / 4 / 3;`}>{7}</Button>
       <Button css={css`grid-area: 3 / 3 / 4 / 4;`}>{8}</Button>
       <Button css={css`grid-area: 3 / 4 / 4 / 5;`}>{9}</Button>
-      <ButtonSubmit css={css`grid-area: 3 / 5 / 5 / 6;`}><ion-icon name="checkmark"></ion-icon></ButtonSubmit>
+      <ButtonSubmit css={css`grid-area: 3 / 5 / 5 / 6;`}><i class="ri-check-line"></i></ButtonSubmit>
       <ButtonOperator css={css`grid-area: 4 / 1 / 5 / 2;`}>+</ButtonOperator>
       <ButtonDate/>
       <Button css={css`grid-area: 4 / 3 / 5 / 4;`}>{0}</Button>
       <Button css={css`grid-area: 4 / 4 / 5 / 5;`}>.</Button>
-      {/* <Date/> */}
+      
     </form>
   )
 }
