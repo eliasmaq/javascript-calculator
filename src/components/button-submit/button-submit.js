@@ -19,7 +19,7 @@ export function ButtonSubmit({ children, OnChangeClick }){
         background-color: ${color};
       }
       `}
-      onClick={HandleClick}>
+      onClick={HandleClick} id="js-submit">
       { children }
     </div>
   )
