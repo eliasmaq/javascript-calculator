@@ -7,7 +7,7 @@ export function ButtonSubmit({ children }){
       css={css`
       font-family: 'Inter';
       width: 50px;
-      
+      height: 100px;
       text-align: center;
       background-color: #06B6D4;
       font-size: 20px;

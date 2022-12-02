@@ -1,7 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-export function Button({ children }){
+export function Button({ children, OnChangeClick }){
   const color = "#06B6D4";
+  function HandleClick(event){
+    OnChangeClick(event.target.textContent)
+  }
   return (
     <div
       css={css`
@@ -15,7 +18,7 @@ export function Button({ children }){
         background-color: ${color};
       }
       `}
-    >
+     onClick={HandleClick}>
       { children }
     </div>
   )
