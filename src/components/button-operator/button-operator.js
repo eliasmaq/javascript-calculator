@@ -7,9 +7,8 @@ export function ButtonOperator({ children }){
       css={css`
       font-family: 'Inter';
       width: 50px;
-      heigth: 50px;
+      height: 50px;
       text-align: center;
-      padding: 19px 11px;
       background-color: #F3F4F6;
       font-size: 20px;
       &:hover {

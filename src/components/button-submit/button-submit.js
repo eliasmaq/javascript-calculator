@@ -7,9 +7,8 @@ export function ButtonSubmit({ children }){
       css={css`
       font-family: 'Inter';
       width: 50px;
-      heigth: 50px;
+      
       text-align: center;
-      padding: 55px 11px;
       background-color: #06B6D4;
       font-size: 20px;
       &:hover {

@@ -7,9 +7,8 @@ export function Button({ children }){
       css={css`
       font-family: 'Inter';
       width: 50px;
-      heigth: 50px;
+      height: 50px;
       text-align: center;
-      padding: 19px 11px;
       background-color: white;
       font-size: 20px;
       &:hover {
