@@ -6,8 +6,8 @@ function App() {
   
   return (
     <div>
-      <Header/>
-      <Input/>
+      {/* <Header/> */}
+      {/* <Input/> */}
       <Form/>
     </div>
   );
