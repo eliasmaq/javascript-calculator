@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import Form from "./components/form/form";
+import React from "react"
 
 function App() {
   
@@ -14,7 +15,6 @@ function App() {
       {/* <Header/> */}
       {/* <Input/> */}
       <Form/>
-
     </div>
   );
 }
