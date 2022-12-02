@@ -1,13 +1,10 @@
-
-// import { Button } from "./components/button-number/button-number";
 import Form from "./components/form/form";
+import React from "react"
 
 function App() {
   
   return (
     <div>
-      {/* <Header/> */}
-      {/* <Input/> */}
       <Form/>
     </div>
   );
