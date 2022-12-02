@@ -33,7 +33,7 @@ export default function Form(){
           setOperant(value);
           setResult(result.concat(value));
         }  
-    }else if(value=== "✔"){
+    }else if(value === "="){
       
       switch(operant){
         case "+":
@@ -72,9 +72,11 @@ export default function Form(){
     setPrevNumber(null);
   }
 
-  function deleteValue(){
+  function deleteValue(event){
     setResult(result.slice(0,-1))
+    event.preventDefault()
   }
+
   function createDigits(){
     const digits = [];
     digits.push([4,2])
@@ -84,6 +86,14 @@ export default function Form(){
       }
     }
     return digits;
+  }
+
+  function iconTogle() {
+    if(operant === null) {
+      return "✔"
+    } else {
+      return "="
+    }
   }
 
   return(
@@ -121,11 +131,11 @@ export default function Form(){
         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} id="prueba" css={css`display: none;}`}/>
         <label htmlFor="prueba"><i className="ri-calendar-line"></i></label>
       </div>
-        <button key="del" onClick={deleteValue} ><i className="ri-delete-back-2-fill"></i></button>
+        <button key="del" onClick={(event) => deleteValue(event)} ><i className="ri-delete-back-2-fill"></i></button>
       
         <button key="reset" onClick={reset} >C</button>
       
-        <ButtonSubmit key="ok" OnChangeClick={handleClickChange}>✔</ButtonSubmit>
+        <ButtonSubmit key="ok" OnChangeClick={handleClickChange} >{iconTogle()}</ButtonSubmit>
         <p key="text" css={css`grid-area: 5 / 1 / 6 / 6;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
       </form>
     </>
