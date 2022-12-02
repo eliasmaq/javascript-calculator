@@ -18,9 +18,22 @@ export function Button({ children,x, y, OnChangeClick }){
       &:hover {
         background-color: ${color};
       }
+      border-top: 0.5px solid #666666;
+      border-right: 0.5px solid #666666;
+      border-bottom: 1px solid #666666;
+
       `}
+    >
+      <div
+      css={css`
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+      `}
+      >
      onClick={HandleClick}>
       { children }
+      </div>
     </div>
   )
 }
