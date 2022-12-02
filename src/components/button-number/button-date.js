@@ -20,7 +20,6 @@ export function ButtonDate(){
         width: 50px;
         height: 50px;
         text-align: center;
-        padding: 19px 11px;
         background-color: white;
         font-size: 20px;
         grid-area: 4 / 2 / 5 / 3;
