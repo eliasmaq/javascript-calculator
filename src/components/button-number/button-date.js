@@ -18,16 +18,15 @@ export function ButtonDate(){
       css={css`
         font-family: 'Inter';
         width: 50px;
+        height: 50px;
         text-align: center;
         background-color: white;
         font-size: 20px;
         grid-area: 4 / 2 / 5 / 3;
         &:hover {
-        background-color: ${color};
+          background-color: ${color};
         }
-        border-top: 1px solid #666666;
-        border-right: 1px solid #666666;
-        border-bottom: 1px solid #666666;
+
         `}
         >
         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} id="prueba" 
@@ -36,8 +35,7 @@ export function ButtonDate(){
         />
         <label htmlFor="prueba"><i className="ri-calendar-line"></i></label>
       </div>
-      
-      <p css={css`grid-area: 5 / 1 / 6 / 6; `}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
+      <p css={css`grid-area: 5 / 1 / 6 / 6;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
     </>
   )
 }
