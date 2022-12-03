@@ -14,7 +14,7 @@ export function ButtonOperator({ children, OnChangeClick, x, y }){
       text-align: center;
       background-color: #F3F4F6;
       font-size: 20px;
-      grid-area:${x+1}/1/${x+1}/2;
+      grid-area:${x+1}/1/${x+1}/2; //fila start / column start / fila end / column end
       &:hover {
         background-color: ${color};
       }
