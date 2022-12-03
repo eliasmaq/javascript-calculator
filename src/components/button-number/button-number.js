@@ -14,7 +14,7 @@ export function Button({ children,x, y, OnChangeClick }){
       text-align: center;
       background-color: white;
       font-size: 20px;
-      grid-area:${x}/${y}/${x}/${y+1};
+      grid-area:${x+1}/${y}/${x+1}/${y+1};
       &:hover {
         background-color: ${color};
       }
