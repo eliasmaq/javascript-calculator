@@ -18,9 +18,20 @@ export function ButtonSubmit({ children, OnChangeClick }){
       &:hover {
         background-color: ${color};
       }
+      border-bottom: 1px solid #E5E7EB;
+      border-left: 1px solid #E5E7EB;
+      border-right: 0.5px solid #E5E7EB;
       `}
       onClick={HandleClick} id="js-submit">
+        <div
+      css={css`
+      display: flex;
+      justify-content: center;
+      margin-top: 35px;
+      `}
+      >
       { children }
     </div>
+  </div>
   )
 }

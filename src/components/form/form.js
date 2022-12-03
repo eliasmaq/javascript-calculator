@@ -54,7 +54,7 @@ export default function Form(){
       setResult(total.toString());
       setPrevNumber(total.toString());
       setOperant(null);
-    }else if(value=== "C"){
+    }else if(value === "C"){
         setResult("$0");
         setOperant(null);
         setCurrentNumber(null);
@@ -105,6 +105,11 @@ export default function Form(){
         grid-template-rows: repeat(5, 50px);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
+        justify-items: center;
+        background-color: #F3F4F6;
+        border-bottom: 1px solid #E5E7EB;
+        border-left: 1px solid #E5E7EB;
+        border-right: 0.5px solid #E5E7EB;
       `}>
         {createDigits().map((digit, index) =>(
           <Button key={index} x={digit[0]} y={digit[1]+1} OnChangeClick={handleClickChange}>{index}</Button>
@@ -119,21 +124,24 @@ export default function Form(){
         width: 50px;
         height: 50px;
         text-align: center;
-        padding: 19px 11px;
         background-color: white;
         font-size: 20px;
         grid-area: 4 / 2 / 5 / 3;
         &:hover {
           background-color: ${color};
         }
+        border-bottom: 1px solid #E5E7EB;
+        border-left: 1px solid #E5E7EB;
+        border-right: 0.5px solid #E5E7EB;
+        border-top: 0.5px solid #E5E7EB;
         `}
         >
         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} id="prueba" css={css`display: none;}`}/>
         <label htmlFor="prueba"><i className="ri-calendar-line"></i></label>
       </div>
-        <button key="del" onClick={(event) => deleteValue(event)} ><i className="ri-delete-back-2-fill"></i></button>
+        <button key="del" onClick={(event) => deleteValue(event)} css={css`padding-right: 16px; padding-left: 16px;`}><i className="ri-delete-back-2-fill"></i></button>
       
-        <button key="reset" onClick={reset} >C</button>
+        <button key="reset" onClick={reset} css={css`padding-right: 18px; padding-left: 18px;`}>C</button>
       
         <ButtonSubmit key="ok" OnChangeClick={handleClickChange} >{iconTogle()}</ButtonSubmit>
         <p key="text" css={css`grid-area: 5 / 1 / 6 / 6;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
