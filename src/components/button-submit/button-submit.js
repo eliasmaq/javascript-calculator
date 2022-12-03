@@ -14,7 +14,7 @@ export function ButtonSubmit({ children, OnChangeClick }){
       text-align: center;
       background-color: #06B6D4;
       font-size: 20px;
-      grid-area: 3 / 5 / 5 / 6;
+      grid-area: 4 / 5 / 6 / 6;
       &:hover {
         background-color: ${color};
       }

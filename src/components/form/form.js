@@ -16,6 +16,7 @@ export default function Form(){
   const [operant, setOperant] = React.useState(null);
   const [currentNumber, setCurrentNumber] = React.useState(null);
   const [result, setResult] = React.useState("$0");
+  const [point, setPoint] = React.useState(null);
   const color = "#06B6D4";
   let date = startDate.getDate();
   let month = startDate.toLocaleString('en-us', { month: 'long' });
@@ -23,9 +24,10 @@ export default function Form(){
   let day = startDate.toLocaleString('en-us', {weekday: 'long'});
 
   function handleClickChange(value) {
-    if(result === "$0"){
+    if(result === "$0" && value !== "✔"){
       return setResult(value);
     }
+
     if(oper.includes(value)){
         if(operant===null){
           setCurrentNumber("")
@@ -59,9 +61,22 @@ export default function Form(){
         setOperant(null);
         setCurrentNumber(null);
         setPrevNumber(null);
-    }else{
-      setResult(result.concat(value));
-      setCurrentNumber(currentNumber + value);
+    }else if(value === "✔"){
+      return;
+    }
+    else{
+      console.log("asdasd")
+      if(value ==="." && point!==1){
+        console.log("ewwwww")
+        setPoint(1);
+        setResult(result.concat(value));
+        setCurrentNumber(currentNumber + value);
+      } 
+      if(point!==1 || value !=="."){
+        console.log("zzz")
+        setResult(result.concat(value));
+        setCurrentNumber(currentNumber + value);
+      }
     }
   }
 
@@ -98,7 +113,7 @@ export default function Form(){
 
   return(
     <>
-      <h1>{result}</h1>
+      
       <form css = {css`
         display: inline-grid;
         grid-template-columns: repeat(5, 50px);
@@ -111,6 +126,11 @@ export default function Form(){
         border-left: 1px solid #E5E7EB;
         border-right: 0.5px solid #E5E7EB;
       `}>
+        <h1  css = {css`
+        font-size: 20px;
+        text-align: center;
+        grid-area:1/1/1/5
+      `}>{result}</h1>
         {createDigits().map((digit, index) =>(
           <Button key={index} x={digit[0]} y={digit[1]+1} OnChangeClick={handleClickChange}>{index}</Button>
         ))}
@@ -126,7 +146,7 @@ export default function Form(){
         text-align: center;
         background-color: white;
         font-size: 20px;
-        grid-area: 4 / 2 / 5 / 3;
+        grid-area: 5 / 2 / 6 / 3;
         &:hover {
           background-color: ${color};
         }
@@ -139,12 +159,12 @@ export default function Form(){
         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} id="prueba" css={css`display: none;}`}/>
         <label htmlFor="prueba"><i className="ri-calendar-line"></i></label>
       </div>
-        <button key="del" onClick={(event) => deleteValue(event)} css={css`padding-right: 16px; padding-left: 16px;`}><i className="ri-delete-back-2-fill"></i></button>
+        <button key="del" onClick={(event) => deleteValue(event)} css={css`grid-area:2/5/2/6; padding-right: 16px; padding-left: 16px;`}><i className="ri-delete-back-2-fill"></i></button>
       
-        <button key="reset" onClick={reset} css={css`padding-right: 18px; padding-left: 18px;`}>C</button>
+        <button key="reset" onClick={reset} css={css`grid-area:3/5/3/6; padding-right: 18px; padding-left: 18px;`}>C</button>
       
         <ButtonSubmit key="ok" OnChangeClick={handleClickChange} >{iconTogle()}</ButtonSubmit>
-        <p key="text" css={css`grid-area: 5 / 1 / 6 / 6;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
+        <p key="text" css={css`grid-area: 6 / 1 / 7 / 6;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
       </form>
     </>
   )
