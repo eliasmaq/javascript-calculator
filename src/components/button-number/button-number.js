@@ -22,6 +22,7 @@ export function Button({ children,x, y, OnChangeClick }){
       border-left: 1px solid #E5E7EB;
       border-right: 0.5px solid #E5E7EB;
       border-bottom: 1px solid #E5E7EB;
+      line-height: 28px;
       `}
     onClick={HandleClick}>
       <div

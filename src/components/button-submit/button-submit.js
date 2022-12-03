@@ -21,6 +21,7 @@ export function ButtonSubmit({ children, OnChangeClick }){
       border-bottom: 1px solid #E5E7EB;
       border-left: 1px solid #E5E7EB;
       border-right: 0.5px solid #E5E7EB;
+		  font-family: 'Inter', sans-serif;
       `}
       onClick={HandleClick} id="js-submit">
         <div

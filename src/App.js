@@ -6,6 +6,7 @@ import { ButtonOperator } from "./components/button-operator/button-operator";
 import { ButtonSubmit } from "./components/button-submit/button-submit";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Header } from "./components/header/header";
 
 export default function App(){
   let total;
@@ -113,6 +114,10 @@ export default function App(){
 
   return(
     <>
+    <Header css = {css`
+    
+    `}
+    ></Header>
       <form css = {css`
         display: inline-grid;
         grid-template-columns: repeat(5, 50px);
@@ -124,11 +129,14 @@ export default function App(){
         border-bottom: 1px solid #E5E7EB;
         border-left: 1px solid #E5E7EB;
         border-right: 0.5px solid #E5E7EB;
+		    font-family: 'Inter', sans-serif;
       `}>
         <h1  css = {css`
         font-size: 20px;
         text-align: center;
-        grid-area:1/2/1/5
+        grid-area:1/2/1/5;
+        line-height: 28px;
+        font-weight: 400;
       `}>${result}</h1>
         {createDigits().map((digit, index) =>(
           <Button key={index} x={digit[0]} y={digit[1]+1} OnChangeClick={handleClickChange}>{index}</Button>
@@ -158,15 +166,17 @@ export default function App(){
         border-top: 0.5px solid #E5E7EB;
         `}
         >
-        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} id="datepick" css={css`display: none;`}/>
+          <div css={css`width: 0;`}>
+        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} id="datepick" css={css`display: none; `}/>
+          </div>
         <label htmlFor="datepick"><i className="ri-calendar-line"></i></label>
       </div>
         <button key="del" onClick={(event) => deleteValue(event)} css={css`grid-area:2/5/2/6; padding-right: 16px; padding-left: 16px;`}><i className="ri-delete-back-2-fill"></i></button>
       
-        <button key="reset" onClick={reset} css={css`grid-area:3/5/3/6; padding-right: 18px; padding-left: 18px;`}>C</button>
+        <button key="reset" onClick={reset} css={css`grid-area:3/5/3/6; padding-right: 16px; padding-left: 16px; font-family: 'Inter', sans-serif; font-size: 20px; line-height: 28px;`}>C</button>
       
         <ButtonSubmit key="ok" OnChangeClick={handleClickChange} >{iconTogle()}</ButtonSubmit>
-        <p key="text" css={css`grid-area: 6 / 1 / 7 / 6;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
+        <p key="text" css={css`grid-area: 6 / 1 / 7 / 6; font-size: 12px; line-height: 16px;`}>{day + " " + month + " "+ "," + " " + date + "," + " " + year}</p>
       </form>
     </>
   )
