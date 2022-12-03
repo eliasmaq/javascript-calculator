@@ -21,6 +21,8 @@ export function ButtonOperator({ children, OnChangeClick, x, y }){
       border-top: 1px solid #E5E7EB;
       border-right: 1px solid #E5E7EB;
       border-bottom: 1px solid #E5E7EB;
+		  font-family: 'Inter', sans-serif;
+      line-height: 28px;
       `}
       onClick={HandleClick}>
       <div
